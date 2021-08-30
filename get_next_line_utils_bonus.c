@@ -6,11 +6,11 @@
 /*   By: rtournet <rtournet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 19:18:53 by rtournet          #+#    #+#             */
-/*   Updated: 2021/08/30 19:18:55 by rtournet         ###   ########.fr       */
+/*   Updated: 2021/08/30 19:20:51 by rtournet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strdup(char *s1)
 {

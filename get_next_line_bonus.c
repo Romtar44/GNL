@@ -6,11 +6,11 @@
 /*   By: rtournet <rtournet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 19:19:10 by rtournet          #+#    #+#             */
-/*   Updated: 2021/08/30 19:19:11 by rtournet         ###   ########.fr       */
+/*   Updated: 2021/08/30 19:21:03 by rtournet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strjoin(char *line, char *buffer)
 {
