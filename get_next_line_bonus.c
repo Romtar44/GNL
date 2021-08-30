@@ -39,27 +39,27 @@ char	*get_next_line(int fd)
 {
 	int			i;
 	char		*line;
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	buffer[1024][BUFFER_SIZE + 1];
 
-	if (BUFFER_SIZE < 1 || read(fd, buffer, 0) == -1)
+	if (BUFFER_SIZE < 1 || read(fd, buffer[fd], 0) == -1)
 		return (NULL);
 	line = ft_strdup("");
-	line = ft_strjoin(line, buffer);
+	line = ft_strjoin(line, buffer[fd]);
 	i = 1;
-	while (i > 0 && !n_ny_n(buffer))
+	while (i > 0 && !n_ny_n(buffer[fd]))
 	{
-		i = read(fd, buffer, BUFFER_SIZE);
+		i = read(fd, buffer[fd], BUFFER_SIZE);
 		if (i == -1)
 			return (free_line(line));
 		else if (i)
 		{
-			buffer[i] = '\0';
-			line = ft_strjoin(line, buffer);
+			buffer[fd][i] = '\0';
+			line = ft_strjoin(line, buffer[fd]);
 		}
-		else if (i == 0 && buffer[0] != 0)
-			return (clean_buffer(buffer, line));
+		else if (i == 0 && buffer[fd][0] != 0)
+			return (clean_buffer(buffer[fd], line));
 		else
 			return (free_line(line));
 	}
-	return (clean_buffer(buffer, line));
+	return (clean_buffer(buffer[fd], line));
 }
